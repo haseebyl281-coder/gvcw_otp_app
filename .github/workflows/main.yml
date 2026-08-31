@@ -16,20 +16,15 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Install Gradle
-        run: sudo apt-get install -y gradle
-
-      - name: Extract Project
+      - name: Extract ZIP
         run: |
-          unzip -o *.zip
-          PROJECT_DIR=$(find . -maxdepth 2 -name "build.gradle" -exec dirname {} \; | head -n 1)
-          echo "PROJECT_DIR=$PROJECT_DIR" >> $GITHUB_ENV
+          unzip -o GVCW_OTP-App.zip -d ./unzipped_app
 
       - name: Build APK with Gradle
         run: |
-          cd "$PROJECT_DIR"
-          gradle wrapper
-          ./gradlew assembleDebug --no-daemon
+          cd unzipped_app/GVCW_OTP-App || cd unzipped_app
+          chmod +x gradlew || true
+          gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
