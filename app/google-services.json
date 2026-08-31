@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "116702728779",
+    "firebase_url": "https://gvcw-otp-fecher-app-default-rtdb.firebaseio.com",
+    "project_id": "gvcw-otp-fecher-app",
+    "storage_bucket": "gvcw-otp-fecher-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:116702728779:android:0b7913b4e0a54c44f0f3ce",
+        "android_client_info": {
+          "package_name": "com.gvcw.cyberrelay"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaSEv-3Ov_s7ngZCwO0E3Ewf6ixLVp7nI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
