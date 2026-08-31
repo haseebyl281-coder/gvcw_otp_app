@@ -16,13 +16,16 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
       - name: Unzip Project
         run: unzip GVCW_OTP-App.zip
 
-      - name: Build APK with Gradle
+      - name: Build APK
         run: |
           cd GVCW_OTP-App
-          gradle build
+          gradle assembleDebug
 
       - name: Upload APK
         uses: actions/upload-artifact@v3
