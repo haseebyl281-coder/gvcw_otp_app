@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:gravity="center_horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GVCW OTP Relay Setup"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"/>
+
+    <EditText
+        android:id="@+id/etTargetPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Target Phone (e.g. 3001234567)"
+        android:inputType="phone"
+        android:layout_marginBottom="15dp"/>
+
+    <EditText
+        android:id="@+id/etFirebaseUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Firebase URL"
+        android:text="https://gvcw-otp-fecher-app-default-rtdb.firebaseio.com"
+        android:layout_marginBottom="25dp"/>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Save &amp; Activate Service"/>
+
+</LinearLayout>
