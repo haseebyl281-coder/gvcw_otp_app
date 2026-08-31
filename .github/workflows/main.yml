@@ -16,18 +16,20 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
+      - name: Install Gradle
+        run: sudo apt-get install -y gradle
 
       - name: Extract Project
         run: |
           unzip -o *.zip
+          PROJECT_DIR=$(find . -maxdepth 2 -name "build.gradle" -exec dirname {} \; | head -n 1)
+          echo "PROJECT_DIR=$PROJECT_DIR" >> $GITHUB_ENV
 
-      - name: Build APK
+      - name: Build APK with Gradle
         run: |
-          BUILD_DIR=$(find . -name "build.gradle" -exec dirname {} \; | head -n 1)
-          cd "$BUILD_DIR"
-          gradle assembleDebug
+          cd "$PROJECT_DIR"
+          gradle wrapper
+          ./gradlew assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
